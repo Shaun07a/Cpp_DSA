@@ -22,7 +22,9 @@ int main(){
     for(auto it : mpp){
         cout << "[" << it.first << "," << it.second << "]";
     }
-   
+    
+    cout << "]";
+
     int q;
     cin >> q;
     while(q--){
@@ -33,7 +35,7 @@ int main(){
 
     }
 
-    cout << "]";
+    
 
     return 0;
 
