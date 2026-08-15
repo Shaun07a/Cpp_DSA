@@ -9,6 +9,12 @@ struct Node{
         data = data1;
         next = next1;
     }
+
+    public:
+    Node(int data1){
+        data = data1;
+        next = nullptr;
+    }
 };
 
 int main(){
@@ -19,6 +25,6 @@ int main(){
     // Node* y = new Node(arr[0], nullptr);
     // cout << y;
 
-    Node* y = new Node(arr[0], nullptr);
+    Node* y = new Node(arr[0]);
     cout << y->data;
 }
