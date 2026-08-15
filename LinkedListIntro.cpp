@@ -13,6 +13,12 @@ struct Node{
 
 int main(){
     vector<int> arr = {2, 5, 8, 7};
+    // Node y = Node(arr[0], nullptr);
+    // cout << y.data;
+
+    // Node* y = new Node(arr[0], nullptr);
+    // cout << y;
+
     Node* y = new Node(arr[0], nullptr);
-    cout << y;
+    cout << y->data;
 }
