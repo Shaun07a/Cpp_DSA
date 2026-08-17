@@ -41,6 +41,14 @@ void print(Node* head){
     cout << endl;
 }
 
+Node* removeHead(Node* head){
+    if(head == NULL) return head;
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+    return head;
+}
+
 int main(){
     vector<int> arr = {12, 5, 8, 7};
     Node* head = convertArr2LL(arr);
