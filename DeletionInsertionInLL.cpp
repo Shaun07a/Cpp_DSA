@@ -52,5 +52,6 @@ Node* removeHead(Node* head){
 int main(){
     vector<int> arr = {12, 5, 8, 7};
     Node* head = convertArr2LL(arr);
-    cout<<head->data;
+    head = removeHead(head);
+    print(head);
 }
