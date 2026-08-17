@@ -120,10 +120,25 @@ Node* insertHead(Node* head, int val){
     return new Node(val , head);
 }
 
+Node* insertTail(Node* head, int val){
+    if(head == NULL){
+        return new Node(val);
+    }
+
+    Node* temp = head;
+    while(temp->next != NULL){
+        temp = temp->next;
+    }
+
+    Node* newNode = new Node(val);
+    temp->next = newNode;
+    return head;
+}
+
 int main(){
     vector<int> arr = {12, 5, 8, 7};
     Node* head = convertArr2LL(arr);
-    head = insertHead(head, 100);
+    head = insertTail(head, 100);
     print(head);
 
 }
