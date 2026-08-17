@@ -32,6 +32,15 @@ Node* convertArr2LL(vector<int> &arr){
     return head;
 }
 
+void print(Node* head){
+    while(head!=NULL){
+        cout << head->data << " ";
+        head = head->next;
+    }
+
+    cout << endl;
+}
+
 int main(){
     vector<int> arr = {12, 5, 8, 7};
     Node* head = convertArr2LL(arr);
