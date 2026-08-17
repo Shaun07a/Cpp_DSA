@@ -116,10 +116,14 @@ Node* RemoveEl(Node* head, int el){
     return head;
 }
 
+Node* insertHead(Node* head, int val){
+    return new Node(val , head);
+}
+
 int main(){
     vector<int> arr = {12, 5, 8, 7};
     Node* head = convertArr2LL(arr);
-    head = RemoveEl(head, 5);
+    head = insertHead(head, 100);
     print(head);
 
 }
