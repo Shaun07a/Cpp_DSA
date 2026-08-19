@@ -4,20 +4,20 @@ using namespace std;
 class Node{
     int data;
     Node* next;
-    Node* prev;
+    Node* back;
 
     public:
-    Node(int data1, Node* next1, Node* prev1){
+    Node(int data1, Node* next1, Node* back1){
         data = data1;
         next = next1;
-        prev = prev1;
+        back = back1;
     }
 
     public:
     Node(int data1){
         data = data1;
         next = nullptr;
-        prev = nullptr;
+        back= nullptr;
     }
 };
 
