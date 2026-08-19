@@ -56,10 +56,27 @@ Node* deleteHead(Node* head){
 
 }
 
+Node* deleteTail(Node* head){
+    if(head == NULL || head->next == NULL){
+        return NULL;
+    }
+
+    Node* tail = head;
+    while(tail->next != NULL){
+        tail = tail->next;
+    }
+
+    Node* prev = tail->back;
+    prev->next = nullptr;
+    tail->next = nullptr;
+    delete tail;
+    return head;
+}
+
 int main(){
     vector<int> arr = {12, 5, 8, 7};
     Node* head = convertArr2DLL(arr);
-    head = deleteHead(head);
+    head = deleteTail(head);
     print(head);
     return 0;
 }
