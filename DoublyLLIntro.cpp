@@ -20,3 +20,7 @@ class Node{
         prev = nullptr;
     }
 };
+
+int main(){
+    return 0;
+}
