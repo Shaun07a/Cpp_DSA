@@ -130,10 +130,34 @@ void deleteNode(Node* temp){
     
 }
 
+Node* insertBeforeHead(Node* head, int val){
+    Node* newHead = new Node(val, head, nullptr);
+
+    head->back = newHead;
+
+    return newHead;
+}
+
+Node* insertBeforeTail(Node* head, int val){
+    if(head->next == NULL){
+        return insertBeforeHead(head, val);
+    }
+
+    Node* tail = head;
+    while(tail->next != NULL){
+        tail = tail->next;
+    }
+
+    Node* prev = tail->back;
+    Node* newNode = new Node(val, tail, prev);
+    prev->next = newNode;
+    tail->back = newNode;
+    return head;
+}
 int main(){
     vector<int> arr = {12, 5, 8, 7};
     Node* head = convertArr2DLL(arr);
-    deleteNode(head->next);
+    head = insertBeforeTail(head, 100);
     print(head);
     return 0;
 }
