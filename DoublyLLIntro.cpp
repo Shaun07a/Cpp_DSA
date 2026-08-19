@@ -176,10 +176,17 @@ Node* insertBeforeKthElement(Node* head, int k, int val){
     temp->back = newNode;
     return head;
 }
+
+void insertBeforeNode(Node* node, int val){
+    Node* prev = node->back;
+    Node* newNode = new Node(val, node, prev);
+    prev->next = newNode;
+    node->back = newNode;
+}
 int main(){
     vector<int> arr = {12, 5, 8, 7};
     Node* head = convertArr2DLL(arr);
-    head = insertBeforeKthElement(head, 2, 10);
+    insertBeforeNode(head->next, 10);
     print(head);
     return 0;
 }
