@@ -112,10 +112,28 @@ Node* removeKthElement(Node* head, int k){
     }
 }
 
+void deleteNode(Node* temp){
+    Node* prev = temp->back;
+    Node* front = temp->next;
+
+    if(front == NULL){
+        prev->next = nullptr;
+        temp->back = nullptr;
+        free(temp);
+        return;
+    }
+
+    prev->next = front;
+    front->back = prev;
+    temp->next = temp->back = nullptr;
+    free(temp);
+    
+}
+
 int main(){
     vector<int> arr = {12, 5, 8, 7};
     Node* head = convertArr2DLL(arr);
-    head = removeKthElement(head, 4);
+    deleteNode(head->next);
     print(head);
     return 0;
 }
