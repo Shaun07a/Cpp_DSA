@@ -51,6 +51,16 @@ Node* reverseLinkedList(Node* head){
     return newHead;
 }
 
+Node* getKthNode(Node* temp, int k){
+    k -= 1;
+    while(temp != NULL && k > 0){
+        k--;
+        temp= temp->next;
+    }
+
+    return temp;
+}
+
 int main(){
     vector<int> arr = {1, 0 , 1, 2, 0, 2, 1};
     Node* head = convertArr2DLL(arr);
