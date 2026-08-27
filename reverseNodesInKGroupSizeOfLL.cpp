@@ -61,6 +61,32 @@ Node* getKthNode(Node* temp, int k){
     return temp;
 }
 
+Node* kReverse(Node* head, int k){
+    Node* temp = head;
+    Node* prevLast = NULL;
+    while(temp != NULL){
+        Node* kThNode = getKthNode(temp, k);
+        if(kThNode == NULL){
+            if(prevLast) prevLast->next = temp;
+            break;
+        }
+
+        Node* nextNode = kThNode->next;
+        kThNode->next = NULL;
+        reverseLinkedList(temp);
+        if(temp == head){
+            head = kThNode;
+        }else{
+            prevLast->next = kThNode;
+        }
+
+        prevLast = temp;
+        temp = nextNode;
+    }
+
+    return head;
+}
+
 int main(){
     vector<int> arr = {1, 0 , 1, 2, 0, 2, 1};
     Node* head = convertArr2DLL(arr);
