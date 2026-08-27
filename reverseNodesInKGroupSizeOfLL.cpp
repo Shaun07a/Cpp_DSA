@@ -37,3 +37,9 @@ void print(Node* head){
         head = head->next;
     }
 }
+
+int main(){
+    vector<int> arr = {1, 0 , 1, 2, 0, 2, 1};
+    Node* head = convertArr2DLL(arr);
+    
+}
